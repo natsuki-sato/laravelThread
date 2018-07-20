@@ -11,19 +11,21 @@
 |
 */
 
-Route::get('/show', 'UserController@call');
-//Route::get('/show', "TasksController@call");
+//Route::get('/show', 'UserController@call');
+//Route::get('/', "TasksController@call");
 
-Route::get('/s{id}', function ($id) {
+
+
+Route::get('/', function () {
     //echo 0;
-    echo "id = [".$id."]";
-    
+    //echo "id = [".$id."]";
+    return view('page.index');
 });
 
 Route::get('/{id}', function ($id) {
     //echo 0;
-    echo "id2 = [".$id."]";
-    
+    //echo "id2 = [".$id."]";
+
 });
 
 

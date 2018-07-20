@@ -16,6 +16,10 @@ class TasksController extends Controller
     public function call() {
             echo "9";
     }
+    public function load(){
+        
+        return view('base');
+    }
     
     /* //上記のように書き換えができます
     public function show($id) {
