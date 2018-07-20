@@ -26,7 +26,7 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
-echo url("/");
+//echo url("/");
 
 $response->send();
 

@@ -44,14 +44,14 @@ if($_SESSION['oauth_token'] == $_GET['oauth_token'] and $_GET['oauth_verifier'])
     
     //echo $access_token['oauth_token'];
     
-    header('Location: ../index.php');
+    header('Location: ../');
 
 
     //echo "callback1,";
     exit();
 }else{
     
-    header('Location: ../index.php');
+    header('Location: ../');
     exit();       
 }
 

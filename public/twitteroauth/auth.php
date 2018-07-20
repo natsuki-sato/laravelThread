@@ -11,7 +11,7 @@ require_once "config.php";
 echo "auth_0.1,";
 
 // Callback URL
-define('Callback', 'http://192.168.206.10:8888/laravelThread/public/twitteroauth/callback.php');
+define('Callback', 'http://192.168.206.10:8888/twitteroauth/callback.php');
  
 echo "auth_0.2,";
 
