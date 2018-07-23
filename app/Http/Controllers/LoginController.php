@@ -1,6 +1,11 @@
 <?php
 
+
+namespace App\Http\Controllers;
+
+
 use Abraham\TwitterOAuth\TwitterOAuth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -34,6 +39,8 @@ class LoginController extends Controller
     
     public function twitterCallback(Request $request)
     {
+        
+        
         $oauth_token = session('oauth_token');
         $oauth_token_secret = session('oauth_token_secret');
 
@@ -59,9 +66,18 @@ class LoginController extends Controller
             $token['oauth_token'],
             $token['oauth_token_secret']
         );
-
+        //session($key)
+        return redirect("/");
+        /*
         # 本来はアカウント有効状態を確認するためのものですが、プロフィール取得にも使用可能
         $twitter_user_info = $twitter_user->get('account/verify_credentials');
         dd($twitter_user_info);
+         * 
+         */
+    }
+    public function twitterLogout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect("/");
     }
 }

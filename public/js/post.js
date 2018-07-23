@@ -31,7 +31,7 @@ function main(){
 
     var twitterlogin = menuContent.getAttribute("data-twitterlogin");
 
-    twitterlogin = twitterlogin==="true" ? true : false;
+    twitterlogin = twitterlogin==="1" ? true : false;
 
     console.log({twitter:twitterlogin});
 
@@ -99,14 +99,16 @@ function main(){
     twitterLoginBtn.addEventListener('click', function(){
         
         var result = window.confirm("twiiterによるログイン認証を行いますか？");
-        if(result) location.href="login.php";
+        //if(result) location.href="login.php";
+        if(result) location.href="/login";
     });
 
     //twiiter認証用のログアウトボタンのクリックイベント
     twitterLogoutBtn.addEventListener('click', function(){
 
         var result=window.confirm("ログイン認証を解除しますか？");
-        if(result) logout_twitter();
+        //if(result) logout_twitter();
+        if(result) location.href="/logout";
     });
 
 }

@@ -1,16 +1,23 @@
 <?php
 namespace App\Http\Controllers;
 use App\Task;
-//use Illuminate\Http\Request;
+
+use Illuminate\Http\Request;
+
 class startController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         //$tasks = Task::all();
-                
-        require_once './php/check_twitter_auth.php';
         
+        //セッションよりtwiiterで認証中か判定
+        $twitterLogin = $request->session()->has("oauth_token");
+
+        //ページの初期画面を表示
         return view('page.index',compact('twitterLogin'));
     }
+    
+    
+    
     
     public function show(Task $task) {
             return view('tasks/show', compact('task'));
