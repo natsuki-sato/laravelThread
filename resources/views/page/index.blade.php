@@ -6,9 +6,8 @@
 @endsection
 @include('layouts.head')
 
-
-@section("twitterLoginState","false")
-@include('layouts.top_menu')
+<!--コントローラーからの変数を渡す-->
+@include('layouts.top_menu',['twitterLoginState' => $twitterLogin])
 
 
 @include('layouts.thread')

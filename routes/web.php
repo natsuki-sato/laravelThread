@@ -16,11 +16,7 @@
 
 
 
-Route::get('/', function () {
-    //echo 0;
-    //echo "id = [".$id."]";
-    return view('page.index');
-});
+Route::get('/', 'startController@index');
 
 Route::get('/{id}', function ($id) {
     //echo 0;
