@@ -27,10 +27,10 @@ class LoginController extends Controller
             'oauth_token_secret' => $token['oauth_token_secret'],
         ));
 
-        # 認証画面へ移動させる
+        # 認証画面へ移動させる(twiiterの認証は以下で変更できる)
         ## 毎回認証をさせたい場合： 'oauth/authorize'
-        ## 再認証が不要な場合： 'oauth/authenticate'
-        $url = $twitter->url('oauth/authenticate', array(
+        ## 再認証が不要な場合　　： 'oauth/authenticate'
+        $url = $twitter->url('oauth/authorize', array(
             'oauth_token' => $token['oauth_token']
         ));
 
