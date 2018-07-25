@@ -14,9 +14,10 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode: 'history',
- 
   routes: [
-    { path: '/', component: require('./components/Index.vue') },
+    //{ path: '/', component: require('./components/Index.vue') }, 
+    //{ path: '/', component: '<dvi>fake</div>' }, 
+    //{ path: '/', template: '' }, 
   ]
 })
 
@@ -25,6 +26,8 @@ const router = new VueRouter({
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app',
+    //el: '#app',
+    router
     
-});
+    
+}).$mount('#app');

@@ -28,10 +28,8 @@ Route::get('/login/twitter/callback', 'LoginController@twitterCallback');
 Route::get('/logout', 'LoginController@twitterLogout');
 
 
-Route::get('/@{id}', function ($id) {
-    //echo 0;
-    //echo "id2 = [".$id."]";
-
-});
-
+Route::get('/{any}', function () {
+    return view('layouts/vue_app');
+})
+->where('any', '.*');
 

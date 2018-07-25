@@ -16,7 +16,7 @@ class LoginController extends Controller
             config('twitter.consumer_secret')
         );
         # 認証用のrequest_tokenを取得
-        # このとき認証後、遷移する画面のURLを渡す-
+        # このとき認証後、遷移する画面のURLを渡す
         $token = $twitter->oauth('oauth/request_token', array(
             'oauth_callback' => config('twitter.callback_url')
         ));
