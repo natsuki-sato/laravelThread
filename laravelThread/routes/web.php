@@ -29,6 +29,8 @@ Route::get('/logout', 'LoginController@twitterLogout');
 
 
 Route::get('/{any}', function () {
+    
+    
     return view('layouts/vue_app');
 })
 ->where('any', '.*');

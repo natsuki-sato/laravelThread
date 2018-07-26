@@ -11,20 +11,27 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}"></script>
 
     <script>
+        
       window.Laravel = {
           csrfToken: "{{ csrf_token() }}"
       };
+      
+      //alert();
     </script>
   </head>
 <body>
-  <div> [before] </div>
-  <div id="app">
- 
-      
-<!--      <div class="container">
-          <router-view></router-view>
-      </div>-->
-  </div>
+
+    <div id="app">
+        <button v-on:click="greet">click</button>
+        <p>
+            <router-link to="/user/foo">/user/foo</router-link>
+            <router-link to="/user/bar">/user/bar</router-link>
+        </p>
+        <router-view></router-view>
+        <parent></parent>
+    </div>
+
+
   <div> [after] </div>
 </body>
 <script src="{{ mix('js/app.js') }}"></script>

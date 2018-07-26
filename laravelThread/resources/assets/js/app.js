@@ -5,12 +5,11 @@ import VueRouter from 'vue-router'
 
 
 
+window.Vue = require('vue');
+Vue.use(VueRouter);
 require('./bootstrap');
 
-window.Vue = require('vue');
-
-//
-Vue.use(VueRouter);
+/*
 
 const router = new VueRouter({
   mode: 'history',
@@ -31,3 +30,37 @@ const app = new Vue({
     
     
 }).$mount('#app');
+*/
+
+
+
+const User = {
+  template: `<div>User {{ $route.params.id }}</div>`
+}
+
+const router = new VueRouter({
+  routes: [
+    { path: '/user/:id', component: User }
+  ]
+})
+
+Vue.component('parent', require('./components/Parent.vue'));
+
+const app = new Vue({ 
+    router,
+    methods:{
+        greet: function (event) {
+            alert();
+        }
+    }
+}).$mount('#app');
+
+
+
+
+//Vue.component('parent', require('./components/Parent.vue'));
+/*
+const app = new Vue({
+    el: '#app',
+});//.mount('#app');
+*/
