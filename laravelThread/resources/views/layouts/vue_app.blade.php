@@ -11,12 +11,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}"></script>
 
     <script>
-        
-      window.Laravel = {
-          csrfToken: "{{ csrf_token() }}"
-      };
-      
-      //alert();
+      window.Laravel = { csrfToken: "{{ csrf_token() }}"};
     </script>
   </head>
 <body>

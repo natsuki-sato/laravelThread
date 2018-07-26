@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja">
+<html lang="{{ config('app.locale') }}">
     <head>
         @yield('head')
         
@@ -12,4 +12,5 @@
         </div>
         @yield('footer')
     </body>
+    <script src="{{ mix('js/app.js') }}"></script>
 </html>

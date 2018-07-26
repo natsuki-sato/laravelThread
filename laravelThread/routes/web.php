@@ -24,6 +24,7 @@ Route::get('/login', 'LoginController@twitter');
 //twitter認証のコールバック
 Route::get('/login/twitter/callback', 'LoginController@twitterCallback');
 
+
 //twitter認証の解除
 Route::get('/logout', 'LoginController@twitterLogout');
 

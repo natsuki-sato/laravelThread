@@ -1,66 +1,50 @@
-//
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//
-
 
 
 window.Vue = require('vue');
-Vue.use(VueRouter);
 require('./bootstrap');
+Vue.use(VueRouter);
 
 /*
-
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    //{ path: '/', component: require('./components/Index.vue') }, 
-    //{ path: '/', component: '<dvi>fake</div>' }, 
-    //{ path: '/', template: '' }, 
-  ]
-})
-
-//
-
-//Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    //el: '#app',
-    router
-    
-    
-}).$mount('#app');
-*/
-
-
-
-const User = {
-  template: `<div>User {{ $route.params.id }}</div>`
-}
-
 const router = new VueRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
 })
 
-Vue.component('parent', require('./components/Parent.vue'));
+//Vue.component('parent', require('./components/Parent.vue'));
 
 const app = new Vue({ 
     router,
     methods:{
-        greet: function (event) {
-            alert();
-        }
+
     }
 }).$mount('#app');
-
-
-
-
-//Vue.component('parent', require('./components/Parent.vue'));
-/*
-const app = new Vue({
-    el: '#app',
-});//.mount('#app');
 */
+
+const menuContent = new Vue({
+    el:'#menuContent',
+    data:{
+        
+        showBtn: true,
+        
+    },
+    created: function () {
+        this.hello()
+    },
+    methods:{
+        hello: function () {
+            console.log(this);
+        },
+        //twiiter認証用ボタンのクリックイベント
+        twLogin:function(){
+            var result = window.confirm("twiiterによるログイン認証を行いますか？");
+            if(result) location.href="/login";
+        },
+        twLogout:function(){
+            var result=window.confirm("ログイン認証を解除しますか？");
+            if(result) location.href="/logout";
+        }
+    }
+});

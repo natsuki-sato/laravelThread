@@ -44,9 +44,14 @@ class LoginController extends Controller
         $oauth_token = session('oauth_token');
         $oauth_token_secret = session('oauth_token_secret');
 
-        # request_tokenが不正な値だった場合エラー
+        # request_tokenが不正な値だった場合エラー -> ページトップにリダイレクト
         if ($request->has('oauth_token') && $oauth_token !== $request->oauth_token) {
-            return Redirect::to('/login');
+            return redirect("/");
+        }else if(!$request->has('oauth_token')){
+            
+            //トークンを削除
+            $request->session()->forget('oauth_token');
+            return redirect("/");
         }
 
         # request_tokenからaccess_tokenを取得
@@ -80,4 +85,6 @@ class LoginController extends Controller
         $request->session()->flush();
         return redirect("/");
     }
+
+    
 }

@@ -2,9 +2,9 @@
 <div id="menu">
     <div id="menuContent" data-twitterLogin={{$twitterLoginState}} >
         
-        <span id="twitterLoginBtn"><p>Login</p></span>
-        <span id="twitterLogoutBtn" ><p>Logout</p></span>
-        <span id="pageMoveBtn"></span>
+        <span id="twitterLoginBtn"  v-bind:class="{showBtn:!showBtn, hideBtn:showBtn}" v-on:click="twLogin"><p>Login</p></span>
+        <span id="twitterLogoutBtn" v-bind:class="{showBtn:showBtn, hideBtn:!showBtn}" v-on:click="twLogout"><p>Logout</p></span>
+        <span id="pageMoveBtn" ></span>
     </div>
 </div>
 @endsection

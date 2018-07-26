@@ -11,7 +11,11 @@ class startController extends Controller
         
         //セッションよりtwiiterで認証中か判定
         $twitterLogin = $request->session()->has("oauth_token");
-
+        /*
+        echo '<script>console.log('.json_encode($request->session()->all()).');</script>';
+        echo '<script>console.log('.json_encode($request->session()->has("oauth_token")).');</script>';
+        echo '<script>console.log('.json_encode($request->session()->get("oauth_token")).');</script>';
+        */
         //ページの初期画面を表示
         return view('page.index',compact('twitterLogin'));
     }
