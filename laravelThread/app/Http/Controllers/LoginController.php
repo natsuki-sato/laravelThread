@@ -39,8 +39,7 @@ class LoginController extends Controller
     
     public function twitterCallback(Request $request)
     {
-        
-        
+
         $oauth_token = session('oauth_token');
         $oauth_token_secret = session('oauth_token_secret');
 
@@ -82,6 +81,7 @@ class LoginController extends Controller
     }
     public function twitterLogout(Request $request)
     {
+        
         $request->session()->flush();
         return redirect("/");
     }

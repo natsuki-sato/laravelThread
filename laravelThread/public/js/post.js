@@ -29,19 +29,13 @@ function main(){
         twitterLogoutBtn = document.getElementById('twitterLogoutBtn');
 
 
-    var twitterlogin = menuContent.getAttribute("data-twitterlogin");
+    //var twitterlogin = menuContent.getAttribute("data-twitterlogin");
 
-    twitterlogin = twitterlogin==="1" ? true : false;
-
-    console.log({twitter:twitterlogin});
-    
-    if(twitterlogin) twitterLoginBtn.style.display="none";
-    else             twitterLogoutBtn.style.display="none";
 
     //auth_password(1,"");
 
     //===== 各種要素にイベントを追加 =====
-    
+    /*
     //記事投稿のクリックイベント
     postBTN.addEventListener('click', post, false);
 
@@ -57,7 +51,7 @@ function main(){
         this.removeAttribute("data-scroll","");
         
     }, false);
-    
+    */
     //スクロール処理を貯める
     var que_scroll=null;
     

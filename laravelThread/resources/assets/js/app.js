@@ -22,20 +22,29 @@ const app = new Vue({
     }
 }).$mount('#app');
 */
-
+//上部メニューの設定（twiiter認証ボタン・スクロールボタン）
 const menuContent = new Vue({
     el:'#menuContent',
     data:{
-        
-        showBtn: true,
-        
+        showLoginBtnFlag: true  
     },
     created: function () {
-        this.hello()
+        
+
     },
     methods:{
+        setLoginState:function(){
+            
+           var parent = document.getElementById('menuContent')
+           var loginState=parent.getAttribute('data-twitterlogin');
+           
+           //contentFrameのデータ属性に応じてフラグを切り替える
+           this.showLoginBtnFlag = loginState==='logout' ? true : false;
+           
+           console.log({showLoginBtnFlag:this.showLoginBtnFlag,loginState:loginState});
+        },
         hello: function () {
-            console.log(this);
+            console.log({this:this});
         },
         //twiiter認証用ボタンのクリックイベント
         twLogin:function(){
@@ -48,3 +57,18 @@ const menuContent = new Vue({
         }
     }
 });
+
+const router = new VueRouter({
+  routes: [
+    //{ path: '/user/:id', component: User }
+  ]
+})
+Vue.component('thread',require('./components/Parent.vue'));
+
+const contentFrame = new Vue({
+    components: {
+        
+    }
+});
+
+

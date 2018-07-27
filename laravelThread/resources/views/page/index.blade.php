@@ -6,12 +6,14 @@
 @endsection
 @include('layouts.head')
 
+<!--echo $twitterLogin;-->
 <!--コントローラーからの変数を渡す-->
 @include('layouts.top_menu',['twitterLoginState' => $twitterLogin])
 
+<!-- vueファイルの呼び出し用にカスタムタグを指定 -->
+@section('contentEle')
+    <router-view></router-view>
+@endsection
 
-@include('layouts.thread')
-
-@include('layouts.post_Form')
 
 @include('layouts.footer')
