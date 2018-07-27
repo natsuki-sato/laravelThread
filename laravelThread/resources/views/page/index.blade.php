@@ -10,10 +10,13 @@
 <!--コントローラーからの変数を渡す-->
 @include('layouts.top_menu',['twitterLoginState' => $twitterLogin])
 
-<!-- vueファイルの呼び出し用にカスタムタグを指定 -->
-@section('contentEle')
-    <router-view></router-view>
-@endsection
 
+@section('contentEle')
+    <!-- vueファイルの呼び出し用にカスタムタグを指定 -->
+    <span>test</span>
+    <router-view></router-view>
+
+@endsection
+@include('layouts.content')
 
 @include('layouts.footer')

@@ -16,7 +16,7 @@
 
 
 
-Route::get('/', 'startController@index');
+Route::get('/{any}', 'startController@index')->where('any', '.*');
 
 //twitter認証の開始
 Route::get('/login', 'LoginController@twitter');
@@ -28,11 +28,11 @@ Route::get('/login/twitter/callback', 'LoginController@twitterCallback');
 //twitter認証の解除
 Route::get('/logout', 'LoginController@twitterLogout');
 
-
+/*
 Route::get('/{any}', function () {
     
     
     return view('layouts/vue_app');
 })
 ->where('any', '.*');
-
+*/

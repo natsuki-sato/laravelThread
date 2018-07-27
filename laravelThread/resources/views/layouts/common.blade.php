@@ -9,7 +9,7 @@
         <div id="contentFrame">
 <!--            @yield('thread')
             @yield('post_Form')-->
-            @yield('contentEle')
+            @yield('content')
         </div>
         @yield('footer')
     </body>

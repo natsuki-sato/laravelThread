@@ -58,17 +58,26 @@ const menuContent = new Vue({
     }
 });
 
-const router = new VueRouter({
-  routes: [
-    //{ path: '/user/:id', component: User }
-  ]
-})
-Vue.component('thread',require('./components/Parent.vue'));
 
-const contentFrame = new Vue({
-    components: {
-        
+const User = {
+  template: '<div>User </div>'
+}
+
+
+const content_router = new VueRouter({
+  //mode: 'history',
+  routes: [
+    {
+        path: '/', component: User 
+
     }
+  ]
 });
 
 
+const contentFrame = new Vue({
+    //el:'#contentFrame', 
+    content_router  
+    
+    
+}).$mount('#contentFrame');
