@@ -15,6 +15,7 @@
     <!-- vueファイルの呼び出し用にカスタムタグを指定 -->
     <!--<span>test</span>-->
     <router-view></router-view>
+    
 
 @endsection
 @include('layouts.content')
