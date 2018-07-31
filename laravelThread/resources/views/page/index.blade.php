@@ -13,7 +13,7 @@
 
 @section('contentEle')
     <!-- vueファイルの呼び出し用にカスタムタグを指定 -->
-    <span>test</span>
+    <!--<span>test</span>-->
     <router-view></router-view>
 
 @endsection

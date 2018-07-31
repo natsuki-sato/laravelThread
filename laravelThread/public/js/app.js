@@ -107,11 +107,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(7);
+// vueとvue-routerの定義
 
 
 
 window.Vue = __webpack_require__(3);
+
+// bootstrap.jsのrequire
 __webpack_require__(28);
+
+// vue-routerを使う宣言
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 /*
@@ -167,19 +172,22 @@ var User = {
     template: '<div>User </div>'
 };
 
-var content_router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-    //mode: 'history',
-    routes: [{
-        path: '/', component: User
-
-    }]
+//変数名は「router」固定
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+    //mode: 'history', //アクセス時に「＃」がurlが入れないようにする
+    routes: [{ path: '/', component: User }]
 });
 
-var contentFrame = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    //el:'#contentFrame', 
-    content_router: content_router
-
-}).$mount('#contentFrame');
+var contentFrame1 = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+    el: '#contentFrame',
+    router: router
+    /*
+    created: function () {
+        
+        //console.log('test');
+    },
+    */
+}); //.$mount('#contentFrame');
 
 /***/ }),
 /* 3 */

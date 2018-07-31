@@ -7,9 +7,11 @@
     <body>
         @yield('top_menu')
         <div id="contentFrame">
+            
 <!--            @yield('thread')
             @yield('post_Form')-->
             @yield('content')
+            
         </div>
         @yield('footer')
     </body>

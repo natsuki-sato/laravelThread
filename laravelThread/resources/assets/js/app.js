@@ -1,9 +1,14 @@
+// vueとvue-routerの定義
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
 window.Vue = require('vue');
+
+// bootstrap.jsのrequire
 require('./bootstrap');
+
+// vue-routerを使う宣言
 Vue.use(VueRouter);
 
 /*
@@ -61,23 +66,25 @@ const menuContent = new Vue({
 
 const User = {
   template: '<div>User </div>'
-}
+};
 
-
-const content_router = new VueRouter({
-  //mode: 'history',
+//変数名は「router」固定
+const router = new VueRouter({
+  //mode: 'history', //アクセス時に「＃」がurlが入れないようにする
   routes: [
-    {
-        path: '/', component: User 
-
-    }
+    { path: '/', component: User }
   ]
 });
 
 
-const contentFrame = new Vue({
-    //el:'#contentFrame', 
-    content_router  
-    
-    
-}).$mount('#contentFrame');
+const contentFrame1 = new Vue({
+    el:'#contentFrame', 
+    router,
+    /*
+    created: function () {
+        
+        //console.log('test');
+    },
+    */
+});//.$mount('#contentFrame');
+
