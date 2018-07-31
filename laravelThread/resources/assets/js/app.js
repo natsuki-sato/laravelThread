@@ -63,28 +63,43 @@ const menuContent = new Vue({
     }
 });
 
-
-const User = {
-  template: '<div>User </div>'
-};
-
 //変数名は「router」固定
 const router = new VueRouter({
-  //mode: 'history', //アクセス時に「＃」がurlが入れないようにする
+  mode: 'history', //アクセス時に「＃」がurlが入ることを防ぐ
   routes: [
-    { path: '/', component: User }
+      
+    {
+        //「*」でurlが「/」のみでも適用される
+        path: '/:path*',  component: require('./components/thread/postArea'),
+        
+        children: [//親コンポネート内の<router-view>に描画する
+            //{path:'show_Post',component: require('./components/thread/postForm')}
+        ]
+        
+    },
+
   ]
 });
 
 
-const contentFrame1 = new Vue({
+//投稿フォームの読み込み
+Vue.component('postForm', require('./components/thread/postForm'));
+
+
+
+const contentFrame = new Vue({
     el:'#contentFrame', 
     router,
-    /*
-    created: function () {
-        
-        //console.log('test');
+    data:{
+        formShowFlag: false  
     },
-    */
-});//.$mount('#contentFrame');
+    created: function () {
+        console.log({showFlag:this.formShowFlag});
+    },
+    methods:{
+        toggle:function(){
+            //console.log({showFlag:this.showFlag});
+        }
+    },
 
+});
